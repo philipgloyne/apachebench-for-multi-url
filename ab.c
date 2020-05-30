@@ -2269,12 +2269,12 @@ int main(int argc, const char * const argv[])
             case 'f':
                 if (strncasecmp(optarg, "ALL", 3) == 0) {
                     meth = SSLv23_client_method();
-                } else if (strncasecmp(optarg, "SSL2", 4) == 0) {
-                    meth = SSLv2_client_method();
-                } else if (strncasecmp(optarg, "SSL3", 4) == 0) {
-                    meth = SSLv3_client_method();
                 } else if (strncasecmp(optarg, "TLS1", 4) == 0) {
                     meth = TLSv1_client_method();
+                } else if (strncasecmp(optarg, "TLS1.1", 4) == 0) {
+                    meth = TLSv1_1_client_method();
+                } else if (strncasecmp(optarg, "TLS1.2", 4) == 0) {
+                    meth = TLSv1_2_client_method();
                 }
                 break;
 #endif
@@ -2348,7 +2348,7 @@ if ( mode == 0 ) {
 #ifdef RSAREF
     R_malloc_init();
 #else
-    CRYPTO_malloc_init();
+    OPENSSL_malloc_init();
 #endif
     SSL_load_error_strings();
     SSL_library_init();
