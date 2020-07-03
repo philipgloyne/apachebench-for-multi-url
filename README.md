@@ -25,7 +25,10 @@ The first URL selected per concurrent user (-c 100 - above example) will always 
 
 ### Credit
 
-All Credit goes to craqueez@gmail.com and bhartshorne@wikimedia.org for the C code.
+All Credit goes to 
+- craqueez@gmail.com
+- bhartshorne@wikimedia.org
+- https://github.com/Popolon
 
 ### Code License
 
