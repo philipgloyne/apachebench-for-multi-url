@@ -13,6 +13,15 @@ Multiple URL requests for ApacheBench. You can set URL list with '-L filename'.
 gcc -I /usr/include/apr-1.0 -I /usr/include/apache2 ab.c -o ab  -lm -lapr-1 -laprutil-1
 ```
 
+### Build Instructions (Linux)
+```
+git checkout https://github.com/philipgloyne/apachebench-for-multi-url.git
+docker run -ti --rm -v `pwd`/apachebench-for-multi-url:/build alpine /bin/sh
+apk add build-base apr-util-dev apache2-dev openssl-libs-static
+cd /build
+gcc -I /usr/include/apr-1 -I /usr/include/apache2 -I /usr/include/openssl ab.c -o ab -lm -lapr-1 -laprutil-1 -lssl -lcrypto -ldl -static
+```
+
 ### Example Usage
 
 ```
@@ -29,6 +38,7 @@ All Credit goes to
 - craqueez@gmail.com
 - bhartshorne@wikimedia.org
 - https://github.com/Popolon
+- https://github.com/rsubr
 
 ### Code License
 
