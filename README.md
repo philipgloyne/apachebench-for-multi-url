@@ -15,7 +15,7 @@ gcc -I /usr/include/apr-1.0 -I /usr/include/apache2 ab.c -o ab  -lm -lapr-1 -lap
 
 ### Build Instructions (Linux)
 ```
-git checkout https://github.com/philipgloyne/apachebench-for-multi-url.git
+git clone https://github.com/philipgloyne/apachebench-for-multi-url.git
 docker run -ti --rm -v `pwd`/apachebench-for-multi-url:/build alpine /bin/sh
 apk add build-base apr-util-dev apache2-dev openssl-libs-static
 cd /build
